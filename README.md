@@ -5,7 +5,8 @@
 <img width="1454" alt="Screen Shot 2023-08-14 at 10 01 00 AM" src="https://github.com/a16z-infra/ai-town/assets/3489963/a4c91f17-23ed-47ec-8c4e-9f9a8505057d">
 
 逐步对Windows系统下的WSL2部署该项目
-如果有疑问或出入，一律以官方文档为准
+
+如果有疑问或出入，一律以官方文档为准，有不严谨或者错误处还请见谅
 
 ##准备工作
 
@@ -74,7 +75,7 @@ docker compose exec backend /bin/bash curl http://host.docker.internal:11434
 
 
 上面操作无法实现的，则可以内网穿透，将ollama的api暴露到外网，使用api链接
-同样这也适用于你的ollama部署在另外一台电脑上的情况
+同样这也适用于你的ollama部署在另外一台电脑上的情况（需要Tunnelmole付费版或者ngrok）
 
 碍于笔者只有一台电脑外加囊中羞涩，下面演示的是Tunnelmole免费版的操作
 如果没安装Node.js请先安装，若已安装则跳过即可
