@@ -1,6 +1,3 @@
-# My_ai-town
-我的ai-town项目的配置经验
-
 #AI TOWN PROJECT
 
 [原项目](https://github.com/a16z-infra/ai-town)
@@ -59,13 +56,11 @@ npm run dev
 ```
 现在你可以访问http://localhost:5173 .来查看未接入大模型的前端页面
 
-接入大模型
-```bash
+接入大模型,Ollama默认接入模型是llama3和mxbai-embed-large:latest
+具体可以查看/convex/util/llm.ts
+···
 
-```
-
-
-
+可能会无法监听，则需要内网穿透，将ollama的api暴露到外网
 ```bash
 cd ai-town
 npx convex env set OLLAMA_HOST {你的URL}
@@ -73,4 +68,6 @@ npx convex env set OLLAMA_HOST {你的URL}
 
 #更改模型
 ```bash
+ npx convex env set OLLAMA_MODEL {接入大语言模型名}
+ npx convex env set OLLAMA_EMBEDDING_MODEL {接入嵌入模型名}
 ```
