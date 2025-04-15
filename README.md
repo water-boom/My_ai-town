@@ -16,6 +16,7 @@
 ```termianl
 wsl --install -d Ubuntu
 ```
+也可以在微软商店下载（省心）
 
 1.2安装Ollama(请确保你的显存足够)
 [OLLAMA官网]https://ollama.com/
@@ -52,7 +53,7 @@ unzip convex-local-backend-x86_64-unknown-linux-gnu.zip
 chmod +x convex-local-backend
 ./convex-local-backend
 ```
-
+由于网络原因下载失败，可以从官方仓库下载对应型号的压缩包，手动复制到Uabntu里的项目文件中再解压
 #尝试启动
 ```bash
 npm run dev
