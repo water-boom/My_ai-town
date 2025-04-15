@@ -106,4 +106,9 @@ npm run dev
  npx convex env set OLLAMA_MODEL {接入大语言模型名}
  npx convex env set OLLAMA_EMBEDDING_MODEL {接入嵌入模型名}
 ```
+更新大模型后应该重置数据库
+```bash
+npx convex run testing:wipeAllTables
+npx convex run init
+```
 其他操作如上
