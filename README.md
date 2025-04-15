@@ -82,7 +82,7 @@ docker compose exec backend /bin/bash curl http://host.docker.internal:11434
 如果没安装Node.js请先安装，若已安装则跳过即可
 [安装Node.js](https://tunnelmole.com/downloads/tmole.exe)，安装记得加入全局变量
 ```terminal
-npm install -g tunnelmole
+npx install -g tunnelmole
 ```
 安装完成后键入
 ```termianl
