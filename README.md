@@ -1,14 +1,13 @@
-#AI TOWN PROJECT
+# AI TOWN PROJECT
 
 [原项目](https://github.com/a16z-infra/ai-town)
 
 <img width="1454" alt="Screen Shot 2023-08-14 at 10 01 00 AM" src="https://github.com/a16z-infra/ai-town/assets/3489963/a4c91f17-23ed-47ec-8c4e-9f9a8505057d">
 
 逐步对Windows系统下的WSL2部署该项目
+如果有疑问或出入，一律以官方文档为准
 
-如果有疑问或出入，一律以官方文档为准，有不严谨或者错误处还请见谅
-
-##准备工作
+## 准备工作
 
 1.1安装Ubantu
 打开Terminal（不会的键如win+r，回车）
@@ -16,7 +15,6 @@
 ```termianl
 wsl --install -d Ubuntu
 ```
-也可以在微软商店下载（省心）
 
 1.2安装Ollama(请确保你的显存足够)
 [OLLAMA官网]https://ollama.com/
@@ -35,7 +33,7 @@ ollama list
 ```
 
 
-##开始部署
+## 开始部署
 通过Terminal打开Ubantu子系统
 输入下列命令行
 ```sh
@@ -44,7 +42,7 @@ cd ai-town
 npm install
 ```
 
-#下载Convex
+## 下载Convex
 请确保你有账号，如果没有可以使用github账号关联登录
 [Convex官网]https://www.convex.dev/
 ```bash
@@ -53,8 +51,8 @@ unzip convex-local-backend-x86_64-unknown-linux-gnu.zip
 chmod +x convex-local-backend
 ./convex-local-backend
 ```
-由于网络原因下载失败，可以从官方仓库下载对应型号的压缩包，手动复制到Uabntu里的项目文件中再解压
-#尝试启动
+
+## 尝试启动
 ```bash
 npm run dev
 ```
@@ -76,13 +74,13 @@ docker compose exec backend /bin/bash curl http://host.docker.internal:11434
 
 
 上面操作无法实现的，则可以内网穿透，将ollama的api暴露到外网，使用api链接
-同样这也适用于你的ollama部署在另外一台电脑上的情况（需要Tunnelmole付费版或者ngrok）
+同样这也适用于你的ollama部署在另外一台电脑上的情况
 
 碍于笔者只有一台电脑外加囊中羞涩，下面演示的是Tunnelmole免费版的操作
 如果没安装Node.js请先安装，若已安装则跳过即可
 [安装Node.js](https://tunnelmole.com/downloads/tmole.exe)，安装记得加入全局变量
 ```terminal
-npx install -g tunnelmole
+npm install -g tunnelmole
 ```
 安装完成后键入
 ```termianl
@@ -101,14 +99,9 @@ npm run dev
 这时候应该接入大模型了,对话无法展开的，查看Ubantu后台，如果有红字代表错误
 可以复制给大模型询问错误处
 
-#更改模型
+## 更改模型
 ```bash
  npx convex env set OLLAMA_MODEL {接入大语言模型名}
  npx convex env set OLLAMA_EMBEDDING_MODEL {接入嵌入模型名}
 ```
-更新大模型后应该重置数据库
-```bash
-npx convex run testing:wipeAllTables
-npx convex run init
-```
-其他操作如上
+其他操作如上<above>(#尝试启动)
