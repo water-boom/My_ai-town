@@ -22,7 +22,7 @@ wsl --install -d Ubuntu
 ```terminal
 ollama 
 ```
-上述操作无误后,下载llama3大模型和向量模型
+上述操作无误后,下载llama3大模型和嵌入模型
 
 ```terminal
 ollama run llama3
@@ -106,4 +106,5 @@ npm run dev
  npx convex env set OLLAMA_MODEL {接入大语言模型名}
  npx convex env set OLLAMA_EMBEDDING_MODEL {接入嵌入模型名}
 ```
+特别注意，改换中文大模型时，可能会有报错，可以改成中文嵌入模型znbang/bge:large-zh-v1.5-q8_0
 其他操作如上
