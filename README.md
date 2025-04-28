@@ -45,7 +45,7 @@ npm install
 
 ## 下载Convex
 请确保你有账号，可以使用github账号关联登录
-[Convex官网])(https://www.convex.dev/)
+[Convex官网])(https://www.convex.dev/),
 convex可能无法用指令下载，可以在浏览器下载对应压缩包，手动放到Ubantu里
 
 ```bash
